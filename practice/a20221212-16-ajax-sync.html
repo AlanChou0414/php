@@ -9,6 +9,10 @@
 <body>
 
   <form name="form1" onsubmit="checkForm(event)" >
+    <input type="text" placeholder="測試用">
+    <br>
+
+
     <input type="number" name="a">
     +
     <input type="number" name="b">
@@ -25,20 +29,10 @@
       console.log({a, b});
       console.log(+a + +b);
 
-      // 1. 建立 XHR 物件
       const xhr = new XMLHttpRequest();
-
-      // 2. 設定事件處理器
-      xhr.onload = function(){
-        console.log('A');
-        document.querySelector('#result').innerHTML = xhr.responseText;
-      }
-      // 3. 設定
-      xhr.open('GET', `a20221212-10-isset-qs.php?a=${a}&b=${b}`);
-      console.log('B');
-      // 4. 發送
+      xhr.open('GET', `a20221212-10-isset-qs.php?a=${a}&b=${b}`, false); // 同步的方式
       xhr.send();
-      console.log('C');
+      document.querySelector('#result').innerHTML = xhr.responseText;
     }
 
   </script>
