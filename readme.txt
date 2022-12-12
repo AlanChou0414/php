@@ -1,0 +1,5 @@
+wins:
+    ipconfig
+
+mac:
+    ifconfig
