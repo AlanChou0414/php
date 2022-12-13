@@ -9,12 +9,13 @@
 <body>
 
   <script>
-    class Person extends Object {
+    class Person {
 
       gender="male"; // 不建議這樣使用
 
       // 建構函式
-      constructor(name='noname', age=18){
+      constructor(name='noname', age=18) {
+        // super()
         this.name = name; // 把區域變數的值存放到屬性裡
         this.age = age;
       }
@@ -24,10 +25,14 @@
         return {name, age, gender};
       }
 
+      toString(){
+        return JSON.stringify(this);
+      }
 
     }
 
     const p1 = new Person('David', 26);
+    
     console.log(p1.name, p1.age, p1.gender);
     console.log(p1.toJSON());
     const p2 = new Person();
