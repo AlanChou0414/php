@@ -12,24 +12,23 @@
 
   <script>
     const p1 = {
-      name: {
-        first: 'John',
-        last: 'Dou'
-      },
+      name: 'John',
       age: 25,
-      gender: '男'
     };
+    const p2 = {
+      name: 'David',
+      age: 23,
+    };
+    const p3 = {
+      name: 'Bill',
+      age: 27,
+    };
+    p1.next = p2;
+    p2.next = p3;
+    p3.next = p1;
 
-    const p2 = p1;
-    const p3 = {...p1, gender: '女'}; // 淺層複製
-    const p4 = JSON.parse(JSON.stringify(p1)); // 深層複製
-
-    p1.age = 35;
-    p1.name.last = 'Wick';
-
-    console.log({p2});
-    console.log({p3});
-    console.log({p4});
+    // 無法做深層複製
+    // console.log(JSON.stringify(p1)) // 發生結構循環的錯誤
 
   </script>
 
