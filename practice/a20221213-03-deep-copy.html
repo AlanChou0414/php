@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <pre id="info"></pre>
+
+
+  <script>
+    const p1 = {
+      name: {
+        first: 'John',
+        last: 'Dou'
+      },
+      age: 25,
+      gender: '男'
+    };
+
+    const p2 = p1;
+    const p3 = {...p1}; // 淺層複製
+    const p4 = JSON.parse(JSON.stringify(p1)); // 深層複製
+
+    p1.age = 35;
+    p1.name.last = 'Wick';
+
+    console.log({p2});
+    console.log({p3});
+    console.log({p4});
+
+  </script>
+
+
+</body>
+</html>
