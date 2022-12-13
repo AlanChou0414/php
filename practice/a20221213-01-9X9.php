@@ -15,7 +15,10 @@
   <?php for($k=1; $k<=9; $k++): ?>
     <tr>
       <?php for($i=1; $i<=9; $i++): ?>
+        <!--
       <td><?= $i. ' * '. $k. ' = '. ($i*$k) ?></td>
+      -->
+      <td><?= sprintf('%s * %s = %s', $i, $k, $i*$k) ?></td>
       <?php endfor ?>
     </tr>
   <?php endfor ?>
