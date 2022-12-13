@@ -1,5 +1,6 @@
 <?php
-setcookie('mycookie', '123');
+setcookie('mycookie', '123', time()+10);
+setcookie('mycookie2', '泥好~');
 
 ?>
 <!DOCTYPE html>
