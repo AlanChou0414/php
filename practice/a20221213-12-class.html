@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    class Person extends Object {
+
+      gender="male"; // 不建議這樣使用
+
+      // 建構函式
+      constructor(name='noname', age=18){
+        this.name = name; // 把區域變數的值存放到屬性裡
+        this.age = age;
+      }
+
+      toJSON(){
+        const {name, age, gender} = this;
+        return {name, age, gender};
+      }
+
+
+    }
+
+    const p1 = new Person('David', 26);
+    console.log(p1.name, p1.age, p1.gender);
+    console.log(p1.toJSON());
+    const p2 = new Person();
+    console.log(p2.name, p2.age);
+
+
+
+  </script>
+
+</body>
+</html>
