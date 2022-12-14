@@ -51,7 +51,7 @@ if (!empty($_POST)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <title>Document</title>
-    
+
 </head>
 
 <body>
@@ -62,16 +62,18 @@ if (!empty($_POST)) {
       <a href="a20221214-03-logout.php">登出</a>
     </div>
   <?php else : ?>
-    <?php if(! empty($error_msg)): ?>
+    <?php if (!empty($error_msg)) : ?>
       <div class="alert alert-danger" role="alert">
         <?= $error_msg ?>
       </div>
     <?php endif ?>
 
     <form name="form1" method="post">
-      <input type="text" name="account">
+      <input type="text" name="account" 
+      value="<?= isset($_POST['account']) ? htmlentities($_POST['account']) : '' ?>">
       <br>
-      <input type="password" name="password">
+      <input type="password" name="password"
+      value="<?= isset($_POST['password']) ? htmlentities($_POST['password']) : '' ?>">
       <br>
       <input type="submit">
     </form>
@@ -79,17 +81,14 @@ if (!empty($_POST)) {
 
 
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script>
-
     const myAlert = $('.alert.alert-danger');
-    if(myAlert.length){
-      setTimeout(()=>{
+    if (myAlert.length) {
+      setTimeout(() => {
         myAlert.slideUp();
       }, 2000);
     }
-
   </script>
 </body>
 
