@@ -41,5 +41,20 @@ ta.value = JSON.stringify(ar);
 </html>
 
 
+<!--
+https://www.president.gov.tw/Page/106
 
+
+-->
+<script>
+  // 1.
+  const ar = [... document.querySelectorAll('.btn')];
+  const ar2 = ar.map(function(el){
+    return el.innerText;
+  });
+
+  const ar3 = ar.map(el=>el.innerText);
+
+
+</script>
 
