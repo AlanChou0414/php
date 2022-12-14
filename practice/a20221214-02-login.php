@@ -50,6 +50,9 @@ if (!empty($_POST)) {
 
   <?php if (isset($_SESSION['user'])) : ?>
     <h2><?= $_SESSION['user']['nickname'] ?> 您好</h2>
+    <div>
+      <a href="a20221214-03-logout.php">登出</a>
+    </div>
   <?php else : ?>
     <form name="form1" method="post">
       <input type="text" name="account">
