@@ -46,7 +46,7 @@ if (!empty($totalRows)) {
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-            <a class="page-link" href="?page=<?= $page - 1 ?>">Previous</a>
+            <a class="page-link" href="?page=<?= $page - 1 ?>"><i class="fa-solid fa-circle-arrow-left"></i></a>
           </li>
 
           <?php for ($i = $page - 5; $i <= $page + 5; $i++) :
@@ -59,7 +59,7 @@ if (!empty($totalRows)) {
           endfor; ?>
 
           <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
-            <a class="page-link" href="?page=<?= $page + 1 ?>">Next</a>
+            <a class="page-link" href="?page=<?= $page + 1 ?>"><i class="fa-solid fa-circle-arrow-right"></i></a>
           </li>
         </ul>
       </nav>
