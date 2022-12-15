@@ -1,6 +1,7 @@
 <?php
 require './parts/connect_db.php';
 $pageName = 'list';
+$title = "資料列表";
 
 $perPage = 20;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
