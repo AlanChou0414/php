@@ -16,29 +16,24 @@ $rows = $pdo->query($sql)->fetchAll();
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">姓名</th>
+            <th scope="col">電郵</th>
+            <th scope="col">手機</th>
+            <th scope="col">生日</th>
+            <th scope="col">地址</th>
           </tr>
         </thead>
         <tbody>
+          <?php foreach($rows as $r): ?>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td><?= $r['sid'] ?></td>
+            <td><?= $r['name'] ?></td>
+            <td><?= $r['email'] ?></td>
+            <td><?= $r['mobile'] ?></td>
+            <td><?= $r['birthday'] ?></td>
+            <td><?= $r['address'] ?></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <?php endforeach ?>
         </tbody>
 
       </table>
