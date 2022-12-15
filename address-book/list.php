@@ -1,7 +1,19 @@
 <?php
 require './parts/connect_db.php';
 
-$sql = "SELECT * FROM address_book ORDER BY sid DESC LIMIT 0, 20";
+$perPage = 10;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+if($page<1){
+  header('Location: ?page=1');
+  exit;
+}
+
+
+$sql = sprintf(
+  "SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s",
+  ($page - 1) * $perPage,
+  $perPage
+);
 
 $rows = $pdo->query($sql)->fetchAll();
 
@@ -24,15 +36,15 @@ $rows = $pdo->query($sql)->fetchAll();
           </tr>
         </thead>
         <tbody>
-          <?php foreach($rows as $r): ?>
-          <tr>
-            <td><?= $r['sid'] ?></td>
-            <td><?= $r['name'] ?></td>
-            <td><?= $r['email'] ?></td>
-            <td><?= $r['mobile'] ?></td>
-            <td><?= $r['birthday'] ?></td>
-            <td><?= $r['address'] ?></td>
-          </tr>
+          <?php foreach ($rows as $r) : ?>
+            <tr>
+              <td><?= $r['sid'] ?></td>
+              <td><?= $r['name'] ?></td>
+              <td><?= $r['email'] ?></td>
+              <td><?= $r['mobile'] ?></td>
+              <td><?= $r['birthday'] ?></td>
+              <td><?= $r['address'] ?></td>
+            </tr>
           <?php endforeach ?>
         </tbody>
 
