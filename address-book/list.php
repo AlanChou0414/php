@@ -45,18 +45,21 @@ if (!empty($totalRows)) {
     <div class="col">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
-          <li class="page-item <?= $page==1 ? 'disabled' : '' ?>">
-            <a class="page-link" href="?page=<?= $page-1 ?>">Previous</a>
+          <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?= $page - 1 ?>">Previous</a>
           </li>
 
-          <?php for($i=1; $i<=$totalPages; $i++): ?>
-          <li class="page-item <?= $i==$page ? 'active' : '' ?> ">
-            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-          </li>
-          <?php endfor ?>
+          <?php for ($i = $page - 5; $i <= $page + 5; $i++) :
+            if ($i >= 1 and $i <= $totalPages) :
+          ?>
+              <li class="page-item <?= $i == $page ? 'active' : '' ?> ">
+                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+              </li>
+          <?php endif;
+          endfor; ?>
 
-          <li class="page-item <?= $page==$totalPages ? 'disabled' : '' ?>">
-            <a class="page-link" href="?page=<?= $page+1 ?>">Next</a>
+          <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+            <a class="page-link" href="?page=<?= $page + 1 ?>">Next</a>
           </li>
         </ul>
       </nav>
