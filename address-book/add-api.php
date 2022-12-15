@@ -27,11 +27,20 @@ $sql = "INSERT INTO `address_book`(
 
 $stmt = $pdo->prepare($sql);
 
+
+$birthday = null;
+if(!empty($_POST['birthday'])){
+  $t = strtotime($_POST['birthday']);
+  if($t!==null){
+    $birthday = date('Y-m-d', $t);
+  }
+}
+
 $stmt->execute([
   $_POST['name'],
   $_POST['email'],
   $_POST['mobile'],
-  $_POST['birthday'],
+  $birthday,
   $_POST['address'],
 ]);
 
