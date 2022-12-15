@@ -68,13 +68,22 @@ $title = "新增資料";
     // TODO: 欄位資料檢查
 
     const fd = new FormData(document.form1);
-
+/*
     fetch('add-api.php', {
       method: 'POST',
       body: fd
     }).then(function(response){
       return response.json()
     }).then(obj=>{
+      console.log(obj);
+    })
+*/
+    fetch('add-api.php', {
+      method: 'POST',
+      body: fd
+    })
+    .then(r=>r.json())
+    .then(obj=>{
       console.log(obj);
     })
 
