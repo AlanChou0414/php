@@ -1,3 +1,9 @@
+<?php
+require './parts/connect_db.php';
+
+
+
+?>
 <?php include './parts/html-head.php' ?>
 <?php include './parts/navbar.php' ?>
 <div class="container">
