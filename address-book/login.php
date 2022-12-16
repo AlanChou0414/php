@@ -11,7 +11,7 @@ $pageName = 'login';
     <div class="col-lg-6">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">新增資料</h5>
+          <h5 class="card-title">管理者登入</h5>
           <form name="form1" onsubmit="checkForm(event)">
             <div class="mb-3">
               <label for="account" class="form-label">帳號</label>
