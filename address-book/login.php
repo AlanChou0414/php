@@ -39,9 +39,23 @@ $pageName = 'login';
     e.preventDefault();
     // TODO: 欄位檢查
 
+    const fd = new FormData(document.form1);
 
-    console.log(document.form1.account.value);
-    console.log(document.form1.password.value);
+    fetch('login-api.php', {
+      method: 'POST',
+      body: fd
+    })
+    .then(r=>r.json())
+    .then(data=>{
+      console.log(data);
+      if(data.success){
+        // alert('成功登入');
+        location.href = 'index_.php';
+      } else {
+        alert(data.error);
+      }
+    })
+
   }
 
 </script>

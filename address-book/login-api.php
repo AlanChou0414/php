@@ -42,7 +42,7 @@ if(
 } else {
   # 密碼錯誤
   $output['error'] = '帳號或密碼錯誤';
-  $output['code'] = 100;
+  $output['code'] = 200;
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
