@@ -29,7 +29,7 @@
               <a class="nav-link"><?= $_SESSION['admin']['account'] ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">登出</a>
+              <a class="nav-link" href="logout.php">登出</a>
             </li>
           <?php else : ?>
             <li class="nav-item">
