@@ -73,6 +73,7 @@ if($isPass) {
     $mobile,
     $birthday,
     $address,
+    $sid
   ]);
   
   $output['success'] = !! $stmt->rowCount();
