@@ -104,15 +104,20 @@ $title = "新增資料";
             el.nextElementSibling.innerHTML = obj.errors[k];
           }
         }
-
-
-
       }
-
-
     })
-
   };
+/*
+取得頁面上的所有表單
+  document.forms
 
+某個表單 (名稱為 form1) 裡面的所有欄位
+  document.form1.elements
+
+拿到某一個欄位
+  document.form1.elements[2]
+  document.form1.mobile
+  document.form1.elements['mobile']
+*/
 </script>
 <?php include './parts/html-foot.php' ?>
