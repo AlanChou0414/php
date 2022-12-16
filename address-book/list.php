@@ -95,7 +95,10 @@ if (!empty($totalRows)) {
               <td><?= $r['email'] ?></td>
               <td><?= $r['mobile'] ?></td>
               <td><?= $r['birthday'] ?></td>
-              <td><?= $r['address'] ?></td>
+              <!--
+              <td><?= strip_tags($r['address']) ?></td>
+          -->
+              <td><?= htmlentities($r['address']) ?></td>
               <td>
                 <a href="edit.php?sid=<?= $r['sid'] ?>">
                   <i class="fa-solid fa-file-pen"></i>
