@@ -86,7 +86,15 @@ if (!empty($totalRows)) {
           <?php foreach ($rows as $r) : ?>
             <tr>
               <td>
-                <a href="delete.php?sid=<?= $r['sid'] ?>">
+              <?php /*
+                <a href="delete.php?sid=<?= $r['sid'] ?>"
+                  onclick="return confirm('確定要刪除這筆資料嗎?')"
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </a>
+              */ ?>
+
+                <a href="javascript: delete_it(<?= $r['sid'] ?>)">
                   <i class="fa-solid fa-trash-can"></i>
                 </a>
               </td>
@@ -114,4 +122,12 @@ if (!empty($totalRows)) {
   </div>
 </div>
 <?php include './parts/scripts.php' ?>
+<script>
+  function delete_it(sid){
+    if(confirm(`確定要刪除編號為 ${sid} 的資料嗎?`)){
+      location.href = `delete.php?sid=${sid}`;
+    }
+  }
+
+</script>
 <?php include './parts/html-foot.php' ?>
