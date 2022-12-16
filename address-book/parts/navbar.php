@@ -24,6 +24,17 @@
 
         </ul>
 
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link <?= $pageName=='login' ? 'active' : '' ?>" 
+            href="login.php">登入</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#沒有實作">註冊</a>
+          </li>
+
+        </ul>
+
       </div>
     </div>
   </nav>

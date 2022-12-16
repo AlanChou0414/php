@@ -1,5 +1,6 @@
 <?php
 require './parts/connect_db.php';
+$pageName = 'login';
 
 ?>
 <?php include './parts/html-head.php' ?>
@@ -36,6 +37,9 @@ require './parts/connect_db.php';
 <script>
   function checkForm(e){
     e.preventDefault();
+    // TODO: 欄位檢查
+
+
     console.log(document.form1.account.value);
     console.log(document.form1.password.value);
   }
