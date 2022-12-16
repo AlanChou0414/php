@@ -26,7 +26,7 @@
         <ul class="navbar-nav  mb-2 mb-lg-0">
           <?php if (isset($_SESSION['admin'])) : ?>
             <li class="nav-item">
-              <a class="nav-link" href="javascript:">管理者的帳號</a>
+              <a class="nav-link"><?= $_SESSION['admin']['account'] ?></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">登出</a>
