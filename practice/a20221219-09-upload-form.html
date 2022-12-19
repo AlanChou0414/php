@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form1" action="a20221219-06-files.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="my_file" accept="image/*" multiple>
+        <br>
+
+    </form>
+
+    <script>
+        const f = document.form1.my_file;
+
+        f.onchange = (e) => {
+            console.log(f.files); // FileList, File
+        };
+
+    </script>
+</body>
+
+=======
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,4 +52,5 @@
 
   </script>
 </body>
+>>>>>>> fd0e818568ad78cddb7f0337794b290b53a4ae1d
 </html>

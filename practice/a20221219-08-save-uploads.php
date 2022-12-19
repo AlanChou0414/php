@@ -4,6 +4,7 @@ header('Content-Type: application/json');
 
 $success = false;
 $error = '';
+
 if(! empty($_FILES['avatar']) and is_string($_FILES['avatar']['name'])){
 
   if(move_uploaded_file(

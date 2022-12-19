@@ -5,6 +5,7 @@ header('Content-Type: application/json');
 
 // 輸出的格式
 $output = [
+
   'success' => false,
   'error' => [],
   'filenames' => [],
@@ -13,6 +14,7 @@ $output = [
 
 // 篩選檔案類型, 決定副檔名
 $extMap = [
+
   'image/jpeg' => '.jpg',
   'image/png' => '.png',
 ];
