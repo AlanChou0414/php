@@ -4,6 +4,7 @@ header('Content-Type: application/json');
 
 $success = false;
 $error = '';
+<<<<<<< HEAD
 // 判斷是否為空 或 字串
 if (!empty($_FILES['avatar'] and is_string($_FILES['avatar']['name']))) {
     // 操作上傳的檔案
@@ -17,10 +18,24 @@ if (!empty($_FILES['avatar'] and is_string($_FILES['avatar']['name']))) {
     } else {
         $error = '搬移失敗';
     }
+=======
+if(! empty($_FILES['avatar']) and is_string($_FILES['avatar']['name'])){
+
+  if(move_uploaded_file(
+    $_FILES['avatar']['tmp_name'],
+    './../uploads/'. $_FILES['avatar']['name']
+  )){
+    $success = true;
+  } else {
+    $error = '無法搬移檔案';
+  }
+
+>>>>>>> fd0e818568ad78cddb7f0337794b290b53a4ae1d
 }
 
 
 echo json_encode([
+<<<<<<< HEAD
     'success' => $success,
     'FILES' => $_FILES,
     'error' => $error
@@ -72,3 +87,9 @@ echo json_encode([
     }
 } 
 -->
+=======
+  'success' => $success,
+  'error' => $error,
+  'FILES' => $_FILES
+]);
+>>>>>>> fd0e818568ad78cddb7f0337794b290b53a4ae1d

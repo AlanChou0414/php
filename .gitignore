@@ -9,6 +9,7 @@ node_modules/
 dist/
 fontawesome/
 .vscode
+uploads/
 # Compiled Java class files
 *.class
 
