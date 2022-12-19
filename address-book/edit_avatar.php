@@ -16,7 +16,7 @@ require './parts/connect_db.php';
         <div class="card-body">
 
           <button class="btn btn-primary" onclick="f.click()">上傳</button>
-          <button class="btn btn-danger">確定</button>
+          <button class="btn btn-danger" onclick="update_avatar()">確定</button>
           <button class="btn btn-warning" onclick="location.reload()">取消</button>
         </div>
 
@@ -53,7 +53,17 @@ require './parts/connect_db.php';
         }
       };
 
+      async function update_avatar(){
+        const filename = avatar_val.value;
 
+        const r = await fetch(`edit_avatar-api.php?filename=${filename}`);
+        const data = await r.json();
+        if(data.success){
+          alert('大頭貼更新完成~');
+        } else {
+          alert('大頭貼更新發生錯誤!!');
+        }
+      }
 
 </script>
 <?php include './parts/html-foot.php' ?>
