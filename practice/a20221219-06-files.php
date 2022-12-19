@@ -2,10 +2,7 @@
 
 header('Content-Type: application/json');
 
-<<<<<<< HEAD
 
-=======
->>>>>>> fd0e818568ad78cddb7f0337794b290b53a4ae1d
 echo json_encode($_FILES);
 
 /*
